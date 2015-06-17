@@ -33,7 +33,15 @@ public class Main {
         "WHERE CustomerId =" + CustomerId;
         
         ResultSet rs = executeQuery(query)
-                
+        
+        
+        
+        // checks if the zip code entered matches the regular expression
+        zipCodeRegex = "^\d{5}(?:[-\s]\d{4})?$"
+        
+        if !enteredZipCode.matches(zipCodeRegex) {
+            throw new InvalidZipCodeException
+        }
         
         
         
