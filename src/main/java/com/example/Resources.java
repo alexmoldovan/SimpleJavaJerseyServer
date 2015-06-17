@@ -31,6 +31,7 @@ public class Resources {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
+        System.out.println("nothing")
         return "GET successful!";
     }
     
