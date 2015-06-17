@@ -24,7 +24,13 @@ public class Main {
         // create a resource config that scans for JAX-RS resources and providers
         // in com.example package
         final ResourceConfig rc = new ResourceConfig().packages("com.example");
-
+        
+        String query = "SELECT customer_name, customer_address, customer_bank_account " +
+        "FROM customer_table " +
+        "WHERE customer_id =" + customer_id;
+        
+        ResultSet rs = executeQuery(query)
+        
         // create and start a new instance of grizzly http server
         // exposing the Jersey application at BASE_URI
         return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
