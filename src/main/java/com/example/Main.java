@@ -43,9 +43,9 @@ public class Main {
             throw new InvalidZipCodeException
         }
         
+        String testing;
         
-        
-        String random
+        String random;
         
         
         // create and start a new instance of grizzly http server
