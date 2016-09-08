@@ -43,10 +43,10 @@
             <version>4.9</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-        	<groupId>com.itu</groupId>
-        	<artifactId>objparser</artifactId>
-        </dependency>
+        <!--<dependency>-->
+        	<!--<groupId>com.itu</groupId>-->
+        	<!--<artifactId>objparser</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>
