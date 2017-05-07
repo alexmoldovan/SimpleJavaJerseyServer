@@ -24,7 +24,30 @@ public class Main {
         // create a resource config that scans for JAX-RS resources and providers
         // in com.example package
         final ResourceConfig rc = new ResourceConfig().packages("com.example");
-
+        
+        
+        
+        // querying the database for a customer list
+        String query = "SELECT Name, PostalAddress, ZipCode, BankAccountNo " +
+        "FROM Customer " +
+        "WHERE CustomerId =" + CustomerId;
+        
+        ResultSet rs = executeQuery(query)
+        
+        
+        
+        // checks if the zip code entered matches the regular expression
+        zipCodeRegex = "^\d{5}(?:[-\s]\d{4})?$"
+        
+        if !enteredZipCode.matches(zipCodeRegex) {
+            throw new InvalidZipCodeException
+        }
+        
+        String testing;
+        
+        String random;
+        
+        
         // create and start a new instance of grizzly http server
         // exposing the Jersey application at BASE_URI
         return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
